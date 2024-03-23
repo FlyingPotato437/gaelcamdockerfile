@@ -9,4 +9,4 @@ dataset = version.download("yolov8")
 from ultralytics import YOLO
 
 model = YOLO('yolov8m')  
-model.train(data=dataset.location + '/data.yaml', epochs=50, img_size=640)
+model.train(data=dataset.location + '/data.yaml', epochs=100, img_size=640)
