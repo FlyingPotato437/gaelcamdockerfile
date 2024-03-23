@@ -8,5 +8,12 @@ dataset = version.download("yolov8")
 
 from ultralytics import YOLO
 
-model = YOLO('yolov8m')  
-model.train(data=dataset.location + '/data.yaml', epochs=100, img_size=640)
+import subprocess
+
+dataset_location = dataset.location
+
+
+command = f"yolo train model=yolov8m.pt data={dataset_location}/data.yaml epochs=50 imgsz=640"
+ 
+
+subprocess.run(command, shell=True, check=True)
